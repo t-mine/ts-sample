@@ -4,7 +4,7 @@
 npm install -g typescript
 ```
 
-### part5
+### part5:高度な型
 
 #### ■ unknown 型
 
@@ -36,3 +36,16 @@ hoge?.foo?.bar();
 let hoge:string | null;
 console.log(str?.length ?? 0);
 ```
+
+#### ■ リテラル型と型エイリアス
+
+リテラル型には string、number、boolean、enum などが使える。
+
+```
+type FalsyType = ''|0|false|null|undefined;
+type DiceType = 1|2|3|4|5|6
+enum Subject {JAPANESE, MATH, SCIENCE, SOCIAL_STUDY, ENGLISH}
+type SciencePart = Subject.MATH | Subject.SCIENCE;
+```
+
+### part6:オブジェクト指向構文
