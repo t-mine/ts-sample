@@ -1,3 +1,4 @@
+// クラス
 var Person = /** @class */ (function () {
     function Person(name, age) {
         this.name = name;
@@ -10,3 +11,32 @@ var Person = /** @class */ (function () {
 }());
 var p = new Person("八九寺真宵", 11);
 console.log(p.show());
+// functionは使える
+function a() {
+    console.log("a");
+}
+a();
+// 型としてのthis
+var MyClass = /** @class */ (function () {
+    function MyClass(_value) {
+        this._value = _value;
+    }
+    Object.defineProperty(MyClass.prototype, "value", {
+        get: function () {
+            return this._value;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    MyClass.prototype.plus = function (value) {
+        this._value += value;
+        return this;
+    };
+    MyClass.prototype.minus = function (value) {
+        this._value -= value;
+        return this;
+    };
+    return MyClass;
+}());
+var myClass = new MyClass(10);
+console.log(myClass.plus(10).minus(5).value);
