@@ -56,3 +56,5 @@ tsc -t es2020 ./src/part6.ts
 
 みたいにしないとコンパイルできない。
 tsconfig.json で compilerOptions の target に es2020 を設定しても効かなかった。
+
+### part7:型注釈としてのインターフェース
